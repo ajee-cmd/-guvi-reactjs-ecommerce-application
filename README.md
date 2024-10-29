@@ -1,1 +1,1 @@
-# -guvi-reactjs-ecommerce-application
+# guvi-reactjs-ecommerce-application
