@@ -1,10 +1,8 @@
 # version: '3'
 services:
   app:
-    container_name: react-app
-    image: react-app:latest
-    # build: .
+    container_name: "react-app-${ENV}"
+    image: ${IMAGE_NAME}:${TAG}
+    pull_policy: always
     ports:
       - "80:80"
-    environment:
-      - NODE_ENV=production

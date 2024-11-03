@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Variables
-IMAGE_NAME="priya2908/dev-guvi/my-react-app"
-TAG="latest" # You can set this to a dynamic version if needed
+ENV=$1
+IMAGE_NAME="priya2908/$ENV-guvi"
+TAG=$2 # You can set this to a dynamic version if needed
 
 # Build the Docker image
 echo "Building Docker image..."
-docker build -t $REACT-APP:$latest .
+docker build -t $IMAGE_NAME:$TAG .
 
 # Push the Docker image to Docker Hub or your registry
 echo "Pushing Docker image..."
-docker push $priya2908/dev-guvi:$latest
+docker push $IMAGE_NAME:$TAG
 
-echo "Docker image built and pushed as $priya2908/dev-guvi:$latest"
+echo "Docker image built and pushed as $IMAGE_NAME:$TAG"
