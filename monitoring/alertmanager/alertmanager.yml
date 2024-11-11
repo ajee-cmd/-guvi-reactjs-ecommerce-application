@@ -1,0 +1,27 @@
+global:
+  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_from: "priyaethiraj1298@gmail.com"
+  smtp_auth_username: "priyaethiraj1298@gmail.com"
+  smtp_auth_password: "qdrnbkyuplkcmpcj"
+  smtp_require_tls: true
+
+route:
+  group_by: 
+    - alertname
+  receiver: email
+  routes:
+    - match:
+        alertname: NginxDown
+      receiver: email
+    - match:
+        alertname: HighHTTPErrors
+      receiver: email
+    - match:
+        alertname: HighActiveConnections
+      receiver: email
+
+receivers:
+  - name: email
+    email_configs:
+      - to: "priyaethiraj1298@gmail.com"
+        send_resolved: true
